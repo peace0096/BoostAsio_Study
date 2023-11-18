@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EcoClientAsync", "EcoClient
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EchoServerAsync", "EchoServerAsync\EchoServerAsync.vcxproj", "{C50AF6A1-8B50-4330-8C89-57E26FAE001A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChatClient", "ChatClient\ChatClient.vcxproj", "{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{C50AF6A1-8B50-4330-8C89-57E26FAE001A}.Release|x64.Build.0 = Release|x64
 		{C50AF6A1-8B50-4330-8C89-57E26FAE001A}.Release|x86.ActiveCfg = Release|Win32
 		{C50AF6A1-8B50-4330-8C89-57E26FAE001A}.Release|x86.Build.0 = Release|Win32
+		{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}.Debug|x64.ActiveCfg = Debug|x64
+		{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}.Debug|x64.Build.0 = Debug|x64
+		{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}.Debug|x86.ActiveCfg = Debug|Win32
+		{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}.Debug|x86.Build.0 = Debug|Win32
+		{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}.Release|x64.ActiveCfg = Release|x64
+		{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}.Release|x64.Build.0 = Release|x64
+		{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}.Release|x86.ActiveCfg = Release|Win32
+		{04C63915-4E78-46D0-AB0C-BE69AEA2E94F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
