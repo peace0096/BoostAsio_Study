@@ -25,6 +25,7 @@ public:
         if (!err)
         {
             std::cout << "OnConnect Success" << std::endl;
+            AsyncRead();
         }
         else
         {
@@ -66,9 +67,10 @@ public:
     void OnRead(const boost::system::error_code& err, const size_t bytes_transferred)
     {
         std::string msg(_recvBuffer);
+        std::cout << "OnRead size: " << bytes_transferred << ", msg : " << msg.c_str() << std::endl;
         if (!err)
         {
-            std::cout << "OnRead size: " << bytes_transferred << ", msg : " << msg.c_str() << std::endl;
+            AsyncRead();
         }
         else
         {
@@ -88,10 +90,12 @@ int main()
 {
     boost::asio::io_context io_context;
     ChatClient client(io_context);
-    client.Connect("127.0.0.1", 4242);
+    client.Connect(std::string("127.0.0.1"), 4242);
 
+    // 이 스레드가 Read/Write를 맡을 것임
     std::thread t1([&io_context]() { io_context.run(); });
 
+    // Main 스레드는 cin을 담당할 것임
     char line[256];
     while (std::cin.getline(line, 256))
     {
