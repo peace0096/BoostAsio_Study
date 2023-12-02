@@ -1,3 +1,6 @@
-﻿  ProtoBuf.cpp
-C:\Users\NoriS_G513\Desktop\workspace\BoostAsio\BoostAsio_Study\ProtoBuf\ProtoBuf.cpp(20,14): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  header.cpp
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
+  - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
   ProtoBuf.vcxproj -> C:\Users\NoriS_G513\Desktop\workspace\BoostAsio\BoostAsio_Study\x64\Debug\ProtoBuf.exe

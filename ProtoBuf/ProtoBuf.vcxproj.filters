@@ -1,13 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="ProtoBuf.cpp" />
-    <ClCompile Include="Protocol.pb.cc" />
+    <ClCompile Include="ProtoBuf.cpp">
+      <Filter>Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Protocol.pb.cc">
+      <Filter>Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="header.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\protobuf-3.20.3\MakeBuild\Debug\Protocol.proto" />
+    <Filter Include="Protobuf">
+      <UniqueIdentifier>{c896377c-a306-465c-b045-1323ac56fc62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Protocol.pb.h" />
+    <ClInclude Include="Protocol.pb.h">
+      <Filter>Protobuf</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\protobuf-3.20.3\MakeBuild\Debug\Protocol.proto">
+      <Filter>Protobuf</Filter>
+    </None>
   </ItemGroup>
 </Project>

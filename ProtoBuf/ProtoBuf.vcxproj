@@ -71,19 +71,19 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\src;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\NoriS_G513\Desktop\workspace\BoostAsio\boost_1_83_0;C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\src;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\MakeBuild\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\src;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\NoriS_G513\Desktop\workspace\BoostAsio\boost_1_83_0;C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\src;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\MakeBuild\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\src;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\NoriS_G513\Desktop\workspace\BoostAsio\boost_1_83_0;C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\src;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\MakeBuild\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\src;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\NoriS_G513\Desktop\workspace\BoostAsio\boost_1_83_0;C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\src;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\NoriS_G513\Desktop\workspace\protobuf-3.20.3\MakeBuild\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="header.cpp" />
     <ClCompile Include="ProtoBuf.cpp" />
     <ClCompile Include="Protocol.pb.cc" />
   </ItemGroup>
