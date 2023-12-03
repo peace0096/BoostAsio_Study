@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3주차", "3주차", "{5935
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProtoBuf", "ProtoBuf\ProtoBuf.vcxproj", "{AAC2655E-7923-4DEC-945D-791DB4C0A7A4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChatServerWithProto", "ChatServerWithProto\ChatServerWithProto.vcxproj", "{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -97,6 +99,14 @@ Global
 		{AAC2655E-7923-4DEC-945D-791DB4C0A7A4}.Release|x64.Build.0 = Release|x64
 		{AAC2655E-7923-4DEC-945D-791DB4C0A7A4}.Release|x86.ActiveCfg = Release|Win32
 		{AAC2655E-7923-4DEC-945D-791DB4C0A7A4}.Release|x86.Build.0 = Release|Win32
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}.Debug|x64.ActiveCfg = Debug|x64
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}.Debug|x64.Build.0 = Debug|x64
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}.Debug|x86.ActiveCfg = Debug|Win32
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}.Debug|x86.Build.0 = Debug|Win32
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}.Release|x64.ActiveCfg = Release|x64
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}.Release|x64.Build.0 = Release|x64
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}.Release|x86.ActiveCfg = Release|Win32
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +120,7 @@ Global
 		{B163D11F-DAE7-4B78-9588-B652973D0DDC} = {9B0BEFF8-356D-4913-AB9E-0B6CADBA9597}
 		{141295E2-73B4-4348-B008-416E9D9434D2} = {9B0BEFF8-356D-4913-AB9E-0B6CADBA9597}
 		{AAC2655E-7923-4DEC-945D-791DB4C0A7A4} = {5935CF44-999E-45D7-8687-4296EEE0FC71}
+		{FFA974D2-FA5F-4DA3-BEC7-D1A865113BE8} = {5935CF44-999E-45D7-8687-4296EEE0FC71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {50E91A88-8D56-4CA5-81AE-990D6D7EB319}
