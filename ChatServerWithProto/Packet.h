@@ -1,4 +1,6 @@
-
+#include <google/protobuf/message.h>
+#include <boost/asio.hpp>
+#include <boost/asio/buffer.hpp>
 
 using namespace boost;
 using namespace std;

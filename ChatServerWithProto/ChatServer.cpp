@@ -109,8 +109,8 @@ public:
 		, _room(room)
 		, _strand(asio::make_strand(io_context))
 	{
-		memcpy(_recvBuffer, 0, RecvBufferSize);
-		memcpy(_sendBuffer, 0, SendBufferSize);
+		memset(_recvBuffer, 0, RecvBufferSize);
+		memset(_sendBuffer, 0, SendBufferSize);
 	}
 
 	void Start()
@@ -176,12 +176,15 @@ protected:
 	void AsyncWrite(const char* message, size_t size)
 	{
 		memcpy(_sendBuffer, message, size);
-		_socket.async_write_some(
+		asio::async_write(_socket, 
 			asio::buffer(_sendBuffer, size),
-			boost::bind(
-				&ChatSession::OnWrite,
-				asio::placeholders::error,
-				asio::placeholders::bytes_transferred
+			asio::bind_executor(_strand, 
+				boost::bind(
+					&ChatSession::OnWrite,
+					this, 
+					asio::placeholders::error,
+					asio::placeholders::bytes_transferred
+				)
 			)
 		);
 	}
@@ -261,7 +264,7 @@ protected:
 
 		char* rawBuffer = new char[requiredSize];
 		auto sendBuffer = asio::buffer(rawBuffer, requiredSize);
-		PacketUtil::Serialize(sendBuffer, header.Code, pbNoti);
+		PacketUtil::Serialize(sendBuffer, chat::MessageCode::CHAT_NOTI, pbNoti);
 		_room.Broadcast(sendBuffer);
 	}
 
@@ -281,3 +284,54 @@ private:
 
 typedef boost::shared_ptr<ChatSession> ChatSessionPtr;
 
+class ChatServer
+{
+public:
+	ChatServer(asio::io_context& io_context, int port)
+		: _acceptor(io_context, tcp::endpoint(tcp::v4(), port))
+		, _io_context(io_context)
+	{}
+
+	void StartAccept()
+	{
+		ChatSession* session = new ChatSession(_io_context, _room);
+		ChatSessionPtr sessionPtr(session);
+		_acceptor.async_accept(sessionPtr->GetSocket(),
+			boost::bind(&ChatServer::OnAccept, this, sessionPtr, asio::placeholders::error));
+	}
+
+protected:
+	void OnAccept(ChatSessionPtr session, boost::system::error_code err)
+	{
+		if (!err)
+		{
+			std::cout << "Connected " << std::endl;
+			session->Start();
+		}
+		StartAccept();
+	}
+
+private:
+	tcp::acceptor _acceptor;
+	asio::io_context& _io_context;
+	ChatRoom _room;
+};
+
+typedef boost::shared_ptr<ChatServer> ChatServerPtr;
+
+int main()
+{
+	try
+	{
+		constexpr int port = 4242;
+		asio::io_context io_context;
+		ChatServer s(io_context, port);
+		s.StartAccept();
+		std::cout << "Server Start " << port << std::endl;
+		io_context.run();
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "Exception " << e.what() << "\n";
+	}
+}
